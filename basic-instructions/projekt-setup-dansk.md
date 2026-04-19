@@ -310,7 +310,10 @@ Afslut sessionen grundigt.
 3. Hvis der er opstået nye ideer eller ønsker i sessionen: tilføj dem i `plan/fremtid.md` under "Ideer" eller "Nice-to-have".
 4. Opret en afsluttende fil i `plan/historik/YYYY-MM-DD-<kort-titel>.md` med:
    - Kontekst, beslutninger, ændrede filer, næste skridt (samme format som `/gem`).
-5. Foreslå en commit-besked i formatet `type: kort beskrivelse` (fx `docs: opdater status efter session`). **Committer ikke selv** — vis beskeden og lad mig køre `git commit`.
+5. **Sikr at alt er committet.**
+   - Hvis mappen ikke er et git-repo (`git rev-parse --is-inside-work-tree` fejler): kør `git init`, opret en fornuftig `.gitignore` hvis den mangler (ud fra stack — brug `Explore`-agenten hvis du er i tvivl), og lav en initial commit.
+   - Hvis det er et git-repo: kør `git status`. Er der uncommittede ændringer, så `git add -A` og `git commit` med en besked i formatet `type: kort beskrivelse` (fx `docs: opdater status efter session`).
+   - Push IKKE automatisk. Vis mig `git log -1` og `git status` til sidst så jeg kan verificere.
 ```
 
 ---
